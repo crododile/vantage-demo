@@ -1,0 +1,53 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pi %><br>
+    <%= f.text_field :pi %>
+  </div>
+  <div class="field">
+    <%= f.label :projectnumber %><br>
+    <%= f.text_field :projectnumber %>
+  </div>
+  <div class="field">
+    <%= f.label :sampleid %><br>
+    <%= f.text_field :sampleid %>
+  </div>
+  <div class="field">
+    <%= f.label :totalreads %><br>
+    <%= f.text_field :totalreads %>
+  </div>
+  <div class="field">
+    <%= f.label :averageqscore %><br>
+    <%= f.text_field :averageqscore %>
+  </div>
+  <div class="field">
+    <%= f.label :percent5xcoverage %><br>
+    <%= f.text_field :percent5xcoverage %>
+  </div>
+  <div class="field">
+    <%= f.label :percent10xcoverage %><br>
+    <%= f.text_field :percent10xcoverage %>
+  </div>
+  <div class="field">
+    <%= f.label :percent20xcoverage %><br>
+    <%= f.text_field :percent20xcoverage %>
+  </div>
+  <div class="field">
+    <%= f.label :percent30xcoverage %><br>
+    <%= f.text_field :percent30xcoverage %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

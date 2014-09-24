@@ -1,0 +1,12 @@
+
+<%=select "pi", "pi", @piList %>
+
+<script>
+$('#pi_pi').on('change', get_pi_info)
+
+function get_pi_info (event){ 
+  url = encodeURI(event.target.value)
+  if (url) window.location.replace(url);
+  return false;
+}
+</script>

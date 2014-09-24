@@ -1,0 +1,58 @@
+<h1>Listing for <%=@topic%></h1>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Choose PI
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <% @piList.each do |pi|%>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="/pi/<%= u(pi) %>"><%=pi%></a></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Choose project
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <% @projectList.each do |pr|%>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="/pr/<%= u(pr) %>"><%=pr%></a></li>
+    <% end %>
+  </ul>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Principal Investigator</th>
+      <th>Project #</th>
+      <th>Sample id</th>
+      <th>Total reads</th>
+      <th>Average q-score (Threshold 25)</th>
+      <th>Percent5xcoverage (Threshold 98)</th>
+      <th>Percent10xcoverage (Threshhold 90)</th>
+      <th>Percent20xcoverage (Threshold 75)</th>
+      <th>Percent30xcoverage (Threshold 65)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.pi %></td>
+        <td><%= project.projectnumber %></td>
+        <td><%= project.sampleid %></td>
+        <td><%= project.totalreads %></td>
+        <td class="<%=project.passableQ?%>"><%= project.averageqscore %></td>
+        <td class="<%=project.passable5coverage?%>"><%= project.percent5xcoverage %></td>
+        <td class="<%=project.passable10coverage?%>"><%= project.percent10xcoverage %></td>
+        <td class="<%=project.passable20coverage?%>"><%= project.percent20xcoverage %></td>
+        <td class="<%=project.passable30coverage?%>"><%= project.percent30xcoverage %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

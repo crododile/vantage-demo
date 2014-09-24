@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pi:</strong>
+  <%= @project.pi %>
+</p>
+
+<p>
+  <strong>Projectnumber:</strong>
+  <%= @project.projectnumber %>
+</p>
+
+<p>
+  <strong>Sampleid:</strong>
+  <%= @project.sampleid %>
+</p>
+
+<p>
+  <strong>Totalreads:</strong>
+  <%= @project.totalreads %>
+</p>
+
+<p>
+  <strong>Averageqscore:</strong>
+  <%= @project.averageqscore %>
+</p>
+
+<p>
+  <strong>Percent5xcoverage:</strong>
+  <%= @project.percent5xcoverage %>
+</p>
+
+<p>
+  <strong>Percent10xcoverage:</strong>
+  <%= @project.percent10xcoverage %>
+</p>
+
+<p>
+  <strong>Percent20xcoverage:</strong>
+  <%= @project.percent20xcoverage %>
+</p>
+
+<p>
+  <strong>Percent30xcoverage:</strong>
+  <%= @project.percent30xcoverage %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
